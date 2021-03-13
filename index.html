@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟表样例</title>
+    <style>
+        .clock {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-image: url(./img/bg.png);
+            background-size: cover;
+        }
+
+        .clock>div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .hour-wrapper {
+            width: 70%;
+            height: 70%;
+            animation: time-run 43200s linear infinite;
+        }
+
+        .hour-wrapper .hour {
+            width: 6px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        .min-wrapper {
+            width: 80%;
+            height: 80%;
+            animation: time-run 3600s linear infinite;
+        }
+
+        .min-wrapper .min {
+            width: 4px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        .sec-wrapper {
+            width: 90%;
+            height: 90%;
+            animation: time-run 60s infinite steps(60);
+        }
+
+        .sec-wrapper .sec {
+            width: 2px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: red;
+        }
+
+        @keyframes time-run {
+            from {
+                transform: rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateZ(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>
